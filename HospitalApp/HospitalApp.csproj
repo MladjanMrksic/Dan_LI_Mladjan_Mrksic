@@ -82,6 +82,7 @@
     <Compile Include="SickLeave.cs">
       <DependentUpon>HospitalDatabaseModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Validation\LoginValidation.cs" />
     <Compile Include="ViewModel\DoctorViewModel.cs" />
     <Compile Include="ViewModel\LoginViewModel.cs" />
     <Compile Include="ViewModel\PatientViewModel.cs" />
@@ -148,9 +149,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Validation\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="HospitalDatabaseModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
