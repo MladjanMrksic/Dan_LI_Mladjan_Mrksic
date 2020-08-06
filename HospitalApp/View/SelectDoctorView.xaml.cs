@@ -16,13 +16,13 @@ using System.Windows.Shapes;
 namespace HospitalApp.View
 {
     /// <summary>
-    /// Interaction logic for PatientView.xaml
+    /// Interaction logic for SelectDoctorView.xaml
     /// </summary>
-    public partial class PatientView : Window
-    {       
-        public PatientView(Patient p)
+    public partial class SelectDoctorView : Window
+    {
+        public SelectDoctorView()
         {
-            DataContext = new PatientViewModel(this,p);
+            DataContext = new SelectDoctorViewModel(this);
             InitializeComponent();
         }
     }

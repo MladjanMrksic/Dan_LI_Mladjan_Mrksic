@@ -20,9 +20,9 @@ namespace HospitalApp.View
     /// </summary>
     public partial class DoctorView : Window
     {
-        public DoctorView()
+        public DoctorView(Doctor doctor)
         {
-            DataContext = new DoctorViewModel(this);
+            DataContext = new DoctorViewModel(this,doctor);
             InitializeComponent();
         }
     }

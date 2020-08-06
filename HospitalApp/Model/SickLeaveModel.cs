@@ -25,6 +25,37 @@ namespace HospitalApp.Model
             }
         }
 
+        public List<SickLeave> GetAllSickLeavesByDoctorID(int ID)
+        {
+            try
+            {
+                using (HospitalDatabaseEntities context = new HospitalDatabaseEntities())
+                {
+                    return (from d in context.SickLeaves where d.DoctorID == ID select d).ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Exception " + ex.Message.ToString(), "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                return null;
+            }
+        }
+        public List<SickLeave> GetAllSickLeavesByPatientID(int ID)
+        {
+            try
+            {
+                using (HospitalDatabaseEntities context = new HospitalDatabaseEntities())
+                {
+                    return (from d in context.SickLeaves where d.PatientID == ID select d).ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Exception " + ex.Message.ToString(), "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                return null;
+            }
+        }
+
         public SickLeave GetSickLeave(int ID)
         {
             try

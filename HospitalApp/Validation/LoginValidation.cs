@@ -20,13 +20,15 @@ namespace HospitalApp.Validation
             List<Doctor> doctors = doctor.GetAllDoctors();
             if (patients.Contains((from x in patients where x.Username == username && x.Password == password select x).FirstOrDefault()))
             {
-                PatientView pv = new PatientView();
+                Patient p = (from x in patients where x.Username == username && x.Password == password select x).FirstOrDefault();
+                PatientView pv = new PatientView(p);
                 view.Close();
                 pv.Show();
             }
             else if (doctors.Contains((from x in doctors where x.Username == username && x.Password == password select x).FirstOrDefault()))
             {
-                DoctorView dv = new DoctorView();
+                Doctor d = (from x in doctors where x.Username == username && x.Password == password select x).FirstOrDefault();
+                DoctorView dv = new DoctorView(d);
                 view.Close();
                 dv.Show();
             }
