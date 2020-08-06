@@ -5,8 +5,80 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HospitalApp.View"
         mc:Ignorable="d"
-        Title="RegisterView" Height="450" Width="800">
+        Title="Add" Height="Auto" Width="800" FontSize="14" Background="DarkBlue" WindowStartupLocation="CenterScreen">
     <Grid>
-        
+        <Border Background="DarkSlateBlue" CornerRadius="50" Margin="20">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="6"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="6"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="6"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="6"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="6"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="6"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="6"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="6"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="6"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="6"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="6"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="6"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="6"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="6"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="20"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="20"/>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="20"/>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="20"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Row="1" Grid.Column="2" Content="First Name"/>
+                <Label Grid.Row="3" Grid.Column="2" Content="Last Name"/>
+                <Label Grid.Row="5" Grid.Column="2" Content="JMBG"/>
+                <Label Name="lblPatientHICN" Grid.Row="7" Grid.Column="2" Content="Health Insurance Card Number" Visibility="Hidden"/>
+                <Label Name="lblDoctorBAN" Grid.Row="7" Grid.Column="2" Content="Bank Account Number" Visibility="Hidden"/>
+                <Label Grid.Row="9" Grid.Column="2" Content="Username"/>
+                <Label Grid.Row="11" Grid.Column="2" Content="Password"/>
+                <Button Grid.Row="23" Grid.Column="2" Name="btnCreatePatient" Content="Create Patient" Width="Auto" Height="20" FontWeight="Bold" Margin="0,0,0,0.8" 
+                        Command="{Binding CreatePatient, UpdateSourceTrigger=PropertyChanged}"/>
+                <Button Grid.Row="23" Grid.Column="4" Name="btnCreateDoctor" Content="Create Doctor" Width="Auto" Height="20" FontWeight="Bold" Margin="0,0,0,0.8" 
+                        Command="{Binding CreateDoctor, UpdateSourceTrigger=PropertyChanged}"/>
+                <Button Grid.Row="25" Grid.Column="2" Name="btnSavePatient" Content="Save" Width="Auto" Height="20" FontWeight="Bold" Margin="0,0,0,0.8" 
+                        Command="{Binding SavePatient, UpdateSourceTrigger=PropertyChanged}" Visibility="Hidden"/>
+                <Button Grid.Row="25" Grid.Column="2" Name="btnSaveDoctor" Content="Save" Width="Auto" Height="20" FontWeight="Bold" Margin="0,0,0,0.8" 
+                        Command="{Binding SaveDoctor, UpdateSourceTrigger=PropertyChanged}" Visibility="Hidden"/>
+                <TextBox Grid.Column="4" Grid.Row="1" Width="auto" Height="20" Name="txtPatientFirstName" Text="{Binding Patient.FirstName, UpdateSourceTrigger=PropertyChanged}" Visibility="Hidden" />
+                <TextBox Grid.Column="4" Grid.Row="3" Width="auto" Height="20" Name="txtPatientLastName" Text="{Binding Patient.LastName, UpdateSourceTrigger=PropertyChanged}" Visibility="Hidden"/>
+                <TextBox Grid.Column="4" Grid.Row="5" Width="auto" Height="20" Name="txtPatientJMBG" Text="{Binding Patient.JMBG, UpdateSourceTrigger=PropertyChanged}" Visibility="Hidden"/>
+                <TextBox Grid.Column="4" Grid.Row="7" Width="auto" Height="20" Name="txtPatientHealthInsuranceCardNumber" Text="{Binding Patient.HealthInsuraceCardNumber, UpdateSourceTrigger=PropertyChanged}" Visibility="Hidden"/>
+                <TextBox Grid.Column="4" Grid.Row="9" Width="auto" Height="20" Name="txtPatientUsername" Text="{Binding Patient.Username, UpdateSourceTrigger=PropertyChanged}" Visibility="Hidden"/>
+                <TextBox Grid.Column="4" Grid.Row="11" Width="auto" Height="20" Name="txtPatientPassword" Text="{Binding Patient.Password, UpdateSourceTrigger=PropertyChanged}" Visibility="Hidden"/>
+                <TextBox Grid.Column="4" Grid.Row="1" Width="auto" Height="20" Name="txtDoctorFirstName" Text="{Binding Doctor.FirstName, UpdateSourceTrigger=PropertyChanged}" Visibility="Hidden" />
+                <TextBox Grid.Column="4" Grid.Row="3" Width="auto" Height="20" Name="txtDoctorLastName" Text="{Binding Doctor.LastName, UpdateSourceTrigger=PropertyChanged}" Visibility="Hidden"/>
+                <TextBox Grid.Column="4" Grid.Row="5" Width="auto" Height="20" Name="txtDoctorJMBG" Text="{Binding Doctor.JMBG, UpdateSourceTrigger=PropertyChanged}" Visibility="Hidden"/>
+                <TextBox Grid.Column="4" Grid.Row="7" Width="auto" Height="20" Name="txtDoctorBankAccountNumber" Text="{Binding Doctor.BankAccountNumber, UpdateSourceTrigger=PropertyChanged}" Visibility="Hidden"/>
+                <TextBox Grid.Column="4" Grid.Row="9" Width="auto" Height="20" Name="txtDoctorUsername" Text="{Binding Doctor.Username, UpdateSourceTrigger=PropertyChanged}" Visibility="Hidden"/>
+                <TextBox Grid.Column="4" Grid.Row="11" Width="auto" Height="20" Name="txtDoctorPassword" Text="{Binding Doctor.Password, UpdateSourceTrigger=PropertyChanged}" Visibility="Hidden"/>
+            </Grid>
+        </Border>
     </Grid>
 </Window>
